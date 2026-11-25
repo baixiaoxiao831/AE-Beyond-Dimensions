@@ -107,15 +107,18 @@ jobs:
                              "Report up to 4 concrete introduced correctness regressions supported by the patch. "
                              "Specify trigger, impact, and an added line on the new side. No stylistic nits or speculative "
                              "claims. Write in the language of the PR title/description, default English. "
-                             "No user mentions, external links or commands. Return empty findings if none.",
+                             "Return attribution as a short parenthesized translation of (Automated review by GPT) in the same language. For Simplified Chinese use （由 GPT 自动审查回复）. Keep GPT in Latin letters. No user mentions, external links or commands. Return empty findings if none.",
                              {"repo": repo, "title": pr["title"], "description": (pr["body"] or "")[:4000], "files": patches},
-                             obj({"findings": {"type": "array", "items": finding}}), 1800)
+                             obj({"attribution": {"type": "string"}, "findings": {"type": "array", "items": finding}}), 1800)
               comments = []
+              signature = result["attribution"].strip()
+              if not (0 < len(signature) <= 100 and "GPT" in signature and not re.search(r"[@<>\n]|https?://", signature)):
+                  signature = "(Automated review by GPT)"
               for f in result["findings"][:4]:
                   body = f["body"].strip()
                   if (f["line"] in anchors.get(f["path"], set()) and 0 < len(body) <= 1500
                           and not re.search(r"@[\w-]|https?://|<", body)):
-                      comments.append({"path": f["path"], "line": f["line"], "side": "RIGHT", "body": body})
+                      comments.append({"path": f["path"], "line": f["line"], "side": "RIGHT", "body": body + "\n\n" + signature})
               return comments
           
           event = json.loads(Path(env["GITHUB_EVENT_PATH"]).read_text())
