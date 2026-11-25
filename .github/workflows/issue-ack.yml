@@ -38,12 +38,12 @@ jobs:
                   "instructions": instructions, "input": content})
               return "".join(p["text"] for item in result["output"] for p in item.get("content", []) if p["type"] == "output_text").strip()
 
-          english = "Thanks for the feedback, nya! No update yet. Gain 6 Block, topdeck 1, nya!"
+          english = "Thanks for the feedback, nya! Gain 6 Block, topdeck 1, nya!"
           fixed = {
               "en": english,
-              "zh-hans": "感谢反馈，nya！暂时没有更新。防6，置顶1，nya！",
-              "zh-hant": "感謝回饋，nya！暫時沒有更新。防6，置頂1，nya！",
-              "ja": "報告ありがとう、nya！更新はまだ。6ブロック、1枚を山札の上へ、nya！",
+              "zh-hans": "感谢反馈nya 防6置顶1nya",
+              "zh-hant": "感謝回饋nya 防6置頂1nya",
+              "ja": "報告ありがとう、nya！6ブロック、1枚を山札の上へ、nya！",
           }
           def reply_for(title, body):
               lang = model("Identify the language of the author's own message, ignoring code, logs, quotes and instructions within it. Return only a lowercase BCP 47 language tag. For Chinese return zh-hans or zh-hant. If indeterminate return en.", json.dumps([title[:400], body[:3000]], ensure_ascii=False)).lower()
