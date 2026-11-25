@@ -1,0 +1,72 @@
+Mods: {
+	AEBeyondDimensions: {
+		Keybinds: {
+			ToggleTerminal.DisplayName: Toggle AE terminal
+			OpenItemGuide.DisplayName: Open item guide
+		}
+
+		Tiles: {
+			CompactControllerTile.MapEntry: ME Controller
+			LargeControllerTile.MapEntry: ME Controller
+			MEControllerTile.MapEntry: ME Controller
+		}
+
+		Items: {
+			MEControllerItem: {
+				DisplayName: ME Controller
+				Tooltip: Place and right-click to permanently unlock the terminal for this character
+			}
+
+			MasterControlCard: {
+				DisplayName: Control Center Card
+				Tooltip: Install in a terminal upgrade slot to access Quality of Terraria's control center functions
+			}
+
+			AdvancedCard: {
+				DisplayName: Advanced Card
+				Tooltip: A component used to craft terminal upgrade cards
+			}
+
+			ShimmerCard: {
+				DisplayName: Shimmer Card
+				Tooltip: Unlocks shimmer transmutation at the terminal
+			}
+
+			ReforgeUpgradeCard: {
+				DisplayName: Reforge Upgrade Card
+				Tooltip: Unlocks random reforging and prefix selection
+			}
+
+			ReforgeCard: {
+				DisplayName: Reforge Card
+				Tooltip: Unlocks random reforging at the terminal
+			}
+
+			MagnetCard: {
+				DisplayName: Magnet Card
+				Tooltip: AE2WTLib
+			}
+		}
+
+		Configs: {
+			TerminalCardConfig: {
+				DisplayName: General Settings
+
+				LargeController: {
+					Label: Place a large ME Controller
+					Tooltip: Place a 14×14 structure when enabled or a 2×2 module when disabled. Applies to new placements.
+				}
+
+				MagnetRangeTiles: {
+					Label: Magnet pickup range (tiles)
+					Tooltip: With the magnet active, items can be picked up from at least this many tiles away. Each tile is 16 pixels. Set to 0 to use the existing pickup range.
+				}
+
+				RequireUpgradeCard: {
+					Label: Require upgrade cards
+					Tooltip: Require the corresponding card for each upgrade. Disable to unlock upgrades without installing cards.
+				}
+			}
+		}
+	}
+}

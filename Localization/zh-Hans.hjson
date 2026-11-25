@@ -1,0 +1,72 @@
+Mods: {
+	AEBeyondDimensions: {
+		Keybinds: {
+			ToggleTerminal.DisplayName: 开关 AE 终端
+			OpenItemGuide.DisplayName: 打开物品指南
+		}
+
+		Tiles: {
+			CompactControllerTile.MapEntry: ME 控制器
+			LargeControllerTile.MapEntry: ME 控制器
+			MEControllerTile.MapEntry: ME 控制器
+		}
+
+		Items: {
+			MEControllerItem: {
+				DisplayName: ME 控制器
+				Tooltip: 放置后右键激活，永久解锁当前角色的终端
+			}
+
+			MasterControlCard: {
+				DisplayName: 总控卡
+				Tooltip: 插入终端升级槽以访问「更好的体验」的总控功能
+			}
+
+			AdvancedCard: {
+				DisplayName: 高级卡
+				Tooltip: 制作终端升级卡的基础材料
+			}
+
+			ShimmerCard: {
+				DisplayName: 微光卡
+				Tooltip: 解锁终端的微光转化
+			}
+
+			ReforgeUpgradeCard: {
+				DisplayName: 重铸升级卡
+				Tooltip: 解锁随机重铸与自选词缀
+			}
+
+			ReforgeCard: {
+				DisplayName: 重铸卡
+				Tooltip: 解锁终端的随机重铸
+			}
+
+			MagnetCard: {
+				DisplayName: 磁卡
+				Tooltip: AE2WTLib
+			}
+		}
+
+		Configs: {
+			TerminalCardConfig: {
+				DisplayName: 通用配置
+
+				LargeController: {
+					Label: 放置大型 ME 控制器
+					Tooltip: 开启时放置 14×14 格结构，关闭时放置 2×2 格模块。仅影响新放置的控制器。
+				}
+
+				MagnetRangeTiles: {
+					Label: 磁力拾取范围（格）
+					Tooltip: 开启磁力时，拾取范围至少为此格数。每格为 16 像素，设为 0 时沿用现有拾取范围。
+				}
+
+				RequireUpgradeCard: {
+					Label: 启用卡机制
+					Tooltip: 开启后，各项升级功能需要装入对应的卡。关闭后直接解锁，已装入的卡仍可取回。
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,4 @@
+displayName = AE: Beyond Dimensions
+author = baixiaoxiao & Codex
+version = 0.1.16
+weakReferences = MagicStorage, ImproveGame
