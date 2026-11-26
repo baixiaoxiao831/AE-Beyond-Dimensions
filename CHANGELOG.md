@@ -1,5 +1,19 @@
 # AE: Beyond Dimensions · 更新日志 / Changelog
 
+## 0.1.21（含 0.1.20）
+
+### 简体中文
+
+- 改善终端文字在不同界面缩放下的清晰度。仓库格和订单格按可用宽度显示数量，有多个词缀变体的装备格会为展开标记留出空间。
+- 中文输入法组字时，终端搜索框会显示尚未确认的文字，候选栏显示在搜索框旁。方向键用于选词，确认后才更新搜索。
+- 大型合成树跳过可视区域外的分支绘制，并保留穿过视口的连线。终端指南调整了标题、行距和换行，让窄窗口里的说明更易阅读。
+
+### English (machine translation)
+
+- Improved terminal text clarity at different UI scales. Stack counts fit the available width in storage and order slots. Equipment with multiple prefixes leaves room for the expand indicator.
+- The terminal search field displays Chinese IME composition text, with the candidate list beside the field. Arrow keys select candidates, and the search updates when you confirm the text.
+- Large crafting trees skip off-screen branches while retaining connectors that cross the viewport. The terminal guide uses revised headings, line spacing, and wrapping for narrower windows.
+
 ## 0.1.19
 
 ### 简体中文
