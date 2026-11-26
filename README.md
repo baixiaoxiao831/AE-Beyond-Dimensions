@@ -63,3 +63,7 @@
 **原创美术**采用 **CC BY-NC-SA 3.0**。欢迎出于非商业目的转载、使用或改编。分享时请署名 **baixiaoxiao & Codex**，保留来源和许可链接；如果改过，请说明改动，并在发布改编作品时沿用同一许可。[美术许可全文](https://creativecommons.org/licenses/by-nc-sa/3.0/)
 
 **第三方素材**沿用各自的许可。来自 Applied Energistics 2 和 AE2 Wireless Terminal Library 的相关贴图同样采用 CC BY-NC-SA 3.0，使用时请保留对应上游作者的署名。模组源代码已在 GitHub 公开，原创代码的再分发许可将另行说明。
+
+## 问题反馈
+
+<img src="images/issue-report-zh.png" width="420" alt="提问时请附日志和截图，否则只能帮你算一卦。">

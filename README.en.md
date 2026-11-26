@@ -63,3 +63,7 @@ You’re welcome to write about **AE: Beyond Dimensions** or share a link to it.
 **Original artwork** is available under **CC BY-NC-SA 3.0**. You may share, reuse, and adapt it for noncommercial purposes. Please credit **baixiaoxiao & Codex** and include links to the source and license. If you publish an adaptation, describe your changes and distribute it under the same license. [Full artwork license](https://creativecommons.org/licenses/by-nc-sa/3.0/)
 
 **Third-party assets** retain their respective licenses. Textures from Applied Energistics 2 and AE2 Wireless Terminal Library are also licensed under CC BY-NC-SA 3.0. Please retain the applicable upstream artist credits when reusing them. The mod’s source code is public on GitHub. Redistribution terms for the original code will be specified separately.
+
+## Reporting an issue
+
+<img src="images/issue-report-en.png" width="420" alt="Without logs or screenshots, all I can do is read your fortune.">
