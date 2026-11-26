@@ -14,8 +14,22 @@ public sealed class TerminalCardConfig : ModConfig
 {
     public override ConfigScope Mode => ConfigScope.ServerSide;
 
-    [DefaultValue(true)]
-    public bool LargeController { get; set; } = true;
+    [CustomModConfigItem(typeof(ControllerShapeElement))]
+    [DefaultValue(ControllerShape.Large)]
+    public ControllerShape ControllerShape { get; set; } = ControllerShape.Large;
+
+    // Read the previous setting on upgrade. New files only write the selected shape.
+    [Newtonsoft.Json.JsonProperty("LargeController")]
+    private bool? LegacyLargeController { set { if (value.HasValue) legacyLarge = value; } }
+    private bool? legacyLarge;
+
+    [System.Runtime.Serialization.OnDeserialized]
+    private void MigrateShape(System.Runtime.Serialization.StreamingContext context)
+    {
+        if (legacyLarge.HasValue)
+            ControllerShape = legacyLarge.Value ? ControllerShape.Large : ControllerShape.Compact;
+        legacyLarge = null;
+    }
 
     [Range(0, 256)]
     [DefaultValue(16)]

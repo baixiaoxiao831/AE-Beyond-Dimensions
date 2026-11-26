@@ -317,7 +317,7 @@ internal sealed class EquipmentPane : UIElement
             TerminalSkin.Item(batch,item,ItemSlot.Context.ChestItem,pos,Color.White,background);
             if(IsHovered(pos,step))
             {
-                TerminalTooltip.ShowItem(item, context: shortage.Missing > 0 ? $"缺少数量：{shortage.Missing}" : null);
+                TerminalTooltip.ShowItem(item, context: shortage.Missing > 0 ? string.Format(TerminalText.Get("缺少数量：{0}"), shortage.Missing) : null);
             }
         }
         bool TransferButton(int x,string asset,string title,string detail) =>
@@ -331,7 +331,7 @@ internal sealed class EquipmentPane : UIElement
         TerminalSkin.Item(batch,output,ItemSlot.Context.ChestItem,outputPos,bench.ViewFilled?Color.White:Color.Gray);
         if(IsHovered(outputPos,step)){
             TerminalTooltip.ShowItem(output, context: bench.ViewFilled?TerminalText.Get("点击取出并自动补料"):status?.Any(s => s.Missing > 0) == true ?
-                "蓝底：物品可制作\n红底：物品缺失" : TerminalText.Get("等待材料或工作站"));
+                TerminalText.Get("蓝底：物品可制作\n红底：物品缺失") : TerminalText.Get("等待材料或工作站"));
             if(Main.mouseLeft && Main.mouseLeftRelease){Main.mouseLeftRelease=false;bench.Take();}
         }
         if(pages>1 && IconButton(batch,outputPos+new Vector2(0,step+4),TextureAssets.ScrollRightButton.Value,null,TerminalText.Get("下一页材料")))bench.Page=(bench.Page+1)%pages;

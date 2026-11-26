@@ -1,4 +1,7 @@
 {
+  "缺少数量：{0}": "Missing: {0}",
+  "蓝底：物品可制作\n红底：物品缺失": "Blue: Can be crafted\nRed: Missing materials",
+  "按住 Shift 显示全部信息": "Hold Shift to show full item details",
   "手持时 Shift＋右键切换放置颜色": "Hold Shift and right-click to cycle placement color",
   "无色": "Uncolored",
   "放置颜色": "Placement color",

@@ -44,7 +44,7 @@ internal static class TerminalTooltip
     {
         var keys = Microsoft.Xna.Framework.Input.Keyboard.GetState();
         if (!keys.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.LeftShift) && !keys.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.RightShift))
-            return "按住 Shift 显示全部信息";
+            return TerminalText.Get("按住 Shift 显示全部信息");
         var item = source.Clone();
         int count = 1, yoyo = -1, research = -1;
         var names = new string[30 + item.ToolTip.Lines];

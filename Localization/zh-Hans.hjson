@@ -5,7 +5,18 @@ Mods: {
 			OpenItemGuide.DisplayName: 打开物品指南
 		}
 
+		ShapeNames: {
+			Large: 大型 14×14
+			Compact: 紧凑型 2×2
+			Tower: 信号塔 6×12
+			Bridge: 中继桥 14×6
+			Halo: 通量环 10×10
+		}
+
 		Tiles: {
+			TowerControllerTile.MapEntry: ME 控制器 · 信号塔（6×12）
+			BridgeControllerTile.MapEntry: ME 控制器 · 中继桥（14×6）
+			HaloControllerTile.MapEntry: ME 控制器 · 通量环（10×10）
 			CompactControllerTile.MapEntry: ME 控制器
 			LargeControllerTile.MapEntry: ME 控制器
 			MEControllerTile.MapEntry: ME 控制器
@@ -44,7 +55,7 @@ Mods: {
 
 			MagnetCard: {
 				DisplayName: 磁卡
-				Tooltip: AE2WTLib
+				Tooltip: 吸引附近掉落物，可设置拾取后进入背包或终端库存
 			}
 		}
 
@@ -52,9 +63,9 @@ Mods: {
 			TerminalCardConfig: {
 				DisplayName: 通用配置
 
-				LargeController: {
-					Label: 放置大型 ME 控制器
-					Tooltip: 开启时放置 14×14 格结构，关闭时放置 2×2 格模块。仅影响新放置的控制器。
+				ControllerShape: {
+					Label: ME 控制器结构
+					Tooltip: 点击图片并保存，之后放置的控制器会使用所选结构。尺寸单位为格。
 				}
 
 				MagnetRangeTiles: {
@@ -65,6 +76,35 @@ Mods: {
 				RequireUpgradeCard: {
 					Label: 启用卡机制
 					Tooltip: 开启后，各项升级功能需要装入对应的卡。关闭后直接解锁，已装入的卡仍可取回。
+				}
+			}
+
+			ControllerShape: {
+				// Tooltip: ""
+
+				Large: {
+					// Label: Large
+					// Tooltip: ""
+				}
+
+				Compact: {
+					// Label: Compact
+					// Tooltip: ""
+				}
+
+				Tower: {
+					// Label: Tower
+					// Tooltip: ""
+				}
+
+				Bridge: {
+					// Label: Bridge
+					// Tooltip: ""
+				}
+
+				Halo: {
+					// Label: Halo
+					// Tooltip: ""
 				}
 			}
 		}

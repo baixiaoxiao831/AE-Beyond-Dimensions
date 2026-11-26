@@ -5,7 +5,18 @@ Mods: {
 			OpenItemGuide.DisplayName: Open item guide
 		}
 
+		ShapeNames: {
+			Large: Large 14×14
+			Compact: Compact 2×2
+			Tower: Signal Tower 6×12
+			Bridge: Relay Bridge 14×6
+			Halo: Flux Ring 10×10
+		}
+
 		Tiles: {
+			TowerControllerTile.MapEntry: ME Controller · Signal Tower (6×12)
+			BridgeControllerTile.MapEntry: ME Controller · Relay Bridge (14×6)
+			HaloControllerTile.MapEntry: ME Controller · Flux Ring (10×10)
 			CompactControllerTile.MapEntry: ME Controller
 			LargeControllerTile.MapEntry: ME Controller
 			MEControllerTile.MapEntry: ME Controller
@@ -44,7 +55,7 @@ Mods: {
 
 			MagnetCard: {
 				DisplayName: Magnet Card
-				Tooltip: AE2WTLib
+				Tooltip: Attracts nearby drops and lets you choose whether pickups go to your inventory or terminal storage
 			}
 		}
 
@@ -52,9 +63,9 @@ Mods: {
 			TerminalCardConfig: {
 				DisplayName: General Settings
 
-				LargeController: {
-					Label: Place a large ME Controller
-					Tooltip: Place a 14×14 structure when enabled or a 2×2 module when disabled. Applies to new placements.
+				ControllerShape: {
+					Label: ME Controller design
+					Tooltip: Select a picture and save to use that design for new controllers. Dimensions are in tiles.
 				}
 
 				MagnetRangeTiles: {
@@ -65,6 +76,35 @@ Mods: {
 				RequireUpgradeCard: {
 					Label: Require upgrade cards
 					Tooltip: Require the corresponding card for each upgrade. Disable to unlock upgrades without installing cards.
+				}
+			}
+
+			ControllerShape: {
+				Tooltip: ""
+
+				Large: {
+					Label: Large
+					Tooltip: ""
+				}
+
+				Compact: {
+					Label: Compact
+					Tooltip: ""
+				}
+
+				Tower: {
+					Label: Tower
+					Tooltip: ""
+				}
+
+				Bridge: {
+					Label: Bridge
+					Tooltip: ""
+				}
+
+				Halo: {
+					Label: Halo
+					Tooltip: ""
 				}
 			}
 		}

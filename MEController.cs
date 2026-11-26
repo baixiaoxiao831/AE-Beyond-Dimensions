@@ -14,8 +14,14 @@ namespace AEBeyondDimensions;
 public sealed class MEControllerItem : ModItem
 {
     public override string Texture => "AEBeyondDimensions/Assets/Controller/ControllerItem";
-    private static int PlacementTile => ModContent.GetInstance<TerminalCardConfig>().LargeController
-        ? ModContent.TileType<LargeControllerTile>() : ModContent.TileType<CompactControllerTile>();
+    private static int PlacementTile => ModContent.GetInstance<TerminalCardConfig>().ControllerShape switch
+    {
+        ControllerShape.Compact => ModContent.TileType<CompactControllerTile>(),
+        ControllerShape.Tower => ModContent.TileType<TowerControllerTile>(),
+        ControllerShape.Bridge => ModContent.TileType<BridgeControllerTile>(),
+        ControllerShape.Halo => ModContent.TileType<HaloControllerTile>(),
+        _ => ModContent.TileType<LargeControllerTile>()
+    };
     internal byte PlacementColor;
     private bool choosing;
     public override void HoldItem(Player player)
@@ -61,6 +67,9 @@ public sealed class LargeControllerTile : ControllerTileBase
 public abstract class ControllerTileBase : ModTile
 {
     protected virtual int Side => 1;
+    protected virtual int Columns => Side;
+    protected virtual int Rows => Side;
+    protected virtual bool HasTopModule(int moduleX) => true;
     protected virtual string Art => "controller_powered";
     public override string Texture => "AEBeyondDimensions/Assets/Controller/"+Art;
     private Asset<Texture2D>? lights;
@@ -69,16 +78,17 @@ public abstract class ControllerTileBase : ModTile
         Main.tileFrameImportant[Type] = true;
         var data=TileObjectData.newTile;
         data.CopyFrom(TileObjectData.Style1x1);
-        data.Width=data.Height=Side;
-        data.Origin=new Point16((Side-1)/2,Side-1);
-        data.CoordinateHeights=new int[Side];
+        data.Width=Columns;
+        data.Height=Rows;
+        data.Origin=new Point16((Columns-1)/2,Rows-1);
+        data.CoordinateHeights=new int[Rows];
         System.Array.Fill(data.CoordinateHeights,16);
-        if (Side>1) data.AnchorBottom=new AnchorData(AnchorType.SolidTile|AnchorType.SolidWithTop|AnchorType.SolidSide,2,Side/2-1);
+        if (Columns>1) data.AnchorBottom=new AnchorData(AnchorType.SolidTile|AnchorType.SolidWithTop|AnchorType.SolidSide,2,Columns/2-1);
         TileObjectData.addTile(Type);
         RegisterItemDrop(ModContent.ItemType<MEControllerItem>());
         AddMapEntry(new Color(99,112,134),CreateMapEntryName());
         DustType = DustID.Iron;
-        if (!Main.dedServ) lights=Mod.Assets.Request<Texture2D>("Assets/Controller/"+(Side==1?"controller_lights":Art+"Lights"));
+        if (!Main.dedServ) lights=Mod.Assets.Request<Texture2D>("Assets/Controller/"+(Columns==1?"controller_lights":Art+"Lights"));
     }
 
     public override void PlaceInWorld(int i,int j,Item item){
@@ -128,11 +138,12 @@ public abstract class ControllerTileBase : ModTile
         var position=new Vector2(i*16,j*16)-Main.screenPosition;
         if (!Main.drawToScreen) position+=new Vector2(Main.offScreenRange);
         var tile=Main.tile[i,j];
-        int stride=Side*18;
+        int frameWidth=Columns*18;
+        int frameHeight=Rows*18;
         void Draw(int n,Color tint)
         {
-            var source=Side==1 ? new Rectangle(0,n*16,16,16)
-                : new Rectangle(n%4*stride+tile.TileFrameX,n/4*stride+tile.TileFrameY,16,16);
+            var source=Columns==1 ? new Rectangle(0,n*16,16,16)
+                : new Rectangle(n%4*frameWidth+tile.TileFrameX,n/4*frameHeight+tile.TileFrameY,16,16);
             spriteBatch.Draw(sheet,position,source,tint);
         }
         Color tint=Color.White;
@@ -140,7 +151,7 @@ public abstract class ControllerTileBase : ModTile
             tint=Main.teamColor[color];
             // A solid edge remains legible on dark portions of the animated light mask.
             var mark=new Rectangle((int)position.X,(int)position.Y,16,2);
-            if(tile.TileFrameY==0)spriteBatch.Draw(Terraria.GameContent.TextureAssets.MagicPixel.Value,mark,tint);
+            if(tile.TileFrameY==0 && HasTopModule(tile.TileFrameX/36))spriteBatch.Draw(Terraria.GameContent.TextureAssets.MagicPixel.Value,mark,tint);
         }
         Draw(frame,tint);
         Draw((frame+1)%count,tint*blend);
