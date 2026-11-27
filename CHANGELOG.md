@@ -1,5 +1,19 @@
 # AE: Beyond Dimensions · 更新日志 / Changelog
 
+## AE 0.1.26
+
+### 简体中文
+
+搭配《更好的体验》（ImproveGame）使用 AE 磁卡时，开启自动收纳的旗帜盒和药水袋会优先接收对应物品。即使容器没有空格，只要已有物品还能堆叠，就可以继续收纳；剩余物品按磁卡的拾取设置处理。
+
+这套优先顺序也适用于领取开袋奖励和用魔杖拆箱时取出的物品。多人游戏中的团队终端现在也会考虑玩家容器的剩余空间。
+
+### English (machine translation)
+
+When using the AE Magnet Card with ImproveGame (Quality of Terraria), the Banner Chest and Potion Bag take priority for matching items if auto-storage is enabled. Even with no empty slots, a container can still top up an existing stack. Any remainder follows your Magnet Card pickup settings.
+
+The same priority applies when claiming bag rewards or breaking a chest with the wand. In multiplayer, the team terminal also takes the available space in each player's containers into account.
+
 ## AE 0.1.25
 
 ### 简体中文
