@@ -1,5 +1,19 @@
 # AE: Beyond Dimensions · 更新日志 / Changelog
 
+## AE 0.1.25
+
+### 简体中文
+
+终端仓库和待合成订单的数量改用原版字体，在格子右下角按宽度缩放。1000 以内显示完整数字，更大的数量使用 K、M 等缩写，例如 1500 显示为 1.5K。合成状态按钮只在有待处理订单时显示数量。
+
+在 Windows 上点进终端搜索框时默认使用英文直输。需要中文时可以照常切换输入法，系统候选窗会跟随光标，离开搜索框时恢复原输入模式。
+
+### English (machine translation)
+
+Storage slots and pending crafting orders now show counts in the vanilla font, sized to fit the lower-right corner of each slot. Counts up to 1,000 are shown in full. Larger counts use K, M and other abbreviations, so 1,500 appears as 1.5K. The crafting status button only shows a count when orders are pending.
+
+On Windows, the terminal search field starts in direct English input mode. You can switch back to Chinese while typing. The system IME candidate window follows the caret, and leaving the field restores the previous input mode.
+
 ## 0.1.21（含 0.1.20）
 
 ### 简体中文
