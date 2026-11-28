@@ -1,5 +1,21 @@
 # AE: Beyond Dimensions · 更新日志 / Changelog
 
+## AE 0.1.31
+
+### 简体中文
+
+- 仓库可按入库先后排序，最近存入或最早存入的物品都能排在前面。合成订单送回仓库时，会单独标出本次交付的数量。
+- 重铸卡可以免费换回这件物品曾经获得的词缀。饰品同类效果保留已出现过的最高档，也能读取《更好的体验》已有的重铸记录。使用升级卡可付费选择尚未获得的适用词缀。
+- 终端可分别隐藏钱币栏和弹药栏，也可对调两栏的位置。通过终端装备翅膀时，会优先使用可用的翅膀专用栏。
+- 优化大量物品堆叠时的仓库列表刷新，减少浏览大型仓库时重复整理物品的开销。
+
+### English (machine translation)
+
+- Sort storage by deposit order, with either the newest or oldest items first. When a crafting order sends items to storage, the terminal marks the quantity delivered in that batch.
+- The Reforge Card can restore a prefix previously rolled on that item for free. For accessories, the list keeps the best recorded tier for each effect. It also reads existing reforge history from ImproveGame. With the upgraded card, you can pay to select an eligible prefix the item has never rolled.
+- Hide the coin and ammo columns independently or swap their positions. Equipping wings through the terminal now prefers an available dedicated wing slot.
+- Large storage lists now reuse grouped item stacks, reducing repeated work while browsing.
+
 ## AE 0.1.26
 
 ### 简体中文
